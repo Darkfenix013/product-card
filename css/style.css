@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2? familia=Fraunces:opsz,wght@9.. 144.700&family=Montserrat:wght@500;700&display=swap');
+:root{
+    /* Primary */
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    /* Neutral */
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+    /* Font */
+    --Font__title: 'Fraunces', serif;
+    --Font__subtitle-paragraph: 'Montserrat', sans-serif;
+    --Font-size__paragraph: 14px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card{
+    display: grid;
+    grid-template-columns: 1,minmax(200px, 1fr);
+    grid-template-rows: 1,1fr;
+    background-color: var(--Cream);
+}
+
+.card__container{
+    
+    margin: 1.7rem;
+    margin-bottom: 0;
+    
+}
+
+.card__img{
+    background-image: url(./images/image-product-mobile.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* textos */
+
+.text__container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--White);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 1.7rem;
+    margin-top: 0;
+}
+
+.card__texts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1.3rem;
+}
+.card__product{
+    font-family: var(--Font__subtitle-paragraph);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: var(--Font-size__paragraph);
+    color: var(--Dark-grayish-blue);
+    font-weight: 400;
+}
+
+.Card__name_product{
+    font-family: var(--Font__title);
+    color: var(--Very-dark-blue);
+    font-size: 2rem;
+}
+
+.card__description{
+    font-family: var(--Font__subtitle-paragraph);
+    font-size: 12px;
+    line-height: 1.4rem;
+    letter-spacing: .3px;
+    color: var(--Dark-grayish-blue);
+    font-weight: 500;
+}
+/* precios */
+.precios__content{
+    display: flex;
+    gap: 20px;
+    padding: 1.3rem;
+    padding-bottom: 0px;
+}
+
+.precio__actual{
+    color: var(--Dark-cyan);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: var(--Font__title);
+}
+
+.precio__anterior{
+    color: var(--Dark-grayish-blue);
+    text-decoration: line-through;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+/* boton */
+.icon{
+    position: relative;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+    font-weight: 700;
+}
+.btn__compra{
+    width: 90%;
+    height: 50px;
+    margin:  20px;
+    background: var(--Dark-cyan);
+    color: var(--White);
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+}
+
+@media (min-width:768px){
+    .card{
+        grid-template-columns: repeat(2,1fr);
+        padding: 50px;
+        grid-template-areas: 
+        "img1 text1";
+    }
+    .card__container{
+        grid-area: img1;
+        margin: 0;
+    }
+    .text__container{
+        grid-area: text1;
+        margin: 0;
+    }
+    .card__texts{
+        gap: 1.7rem;
+        padding: 1.7rem;
+        padding-bottom: 25px;
+    }
+    .card__img{
+        background:url(/images/image-product-desktop.jpg);
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+    }
+    .card__product{
+        font-family: var(--Font__subtitle-paragraph);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 15px;
+    }
+    .Card__name_product{
+        font-size: 2.3rem;
+    }
+    .card__description{
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+        line-height: 1.7rem;
+
+    }
+
+    .precios__content{
+        padding: 0 1.3rem;
+    }
+    
+    .precio__actual{
+        font-size: 40px;
+    }
+    
+    .precio__anterior{
+        line-height: 65px;
+        font-size: 15px;
+    }
+    
+    .icon{
+        width: 30px;
+        height: 30px;
+        padding-right: 5px;
+        font-weight: 700;
+    }
+    .btn__compra{
+        width: 80%;
+        height: 50px;
+        font-size: 20px;
+        padding-bottom: 5px;
+    }
+    
+    
+}
+
+@media(min-width:1024px){
+  
+    .card__texts{
+        padding: 2.5rem;
+        padding-bottom: 20px;
+    }
+    .card__img{
+        border-top-left-radius: 25px;
+        background-size: contain;
+        background-position:right;
+    }
+    .card__product{
+        font-size: 15px;
+      
+    }
+    .Card__name_product{
+        line-height: 45px ;
+        font-size: 3.3rem;
+    }
+    .card__description{
+        font-size: 1.1rem;
+        line-height: 1.9rem;
+
+    }
+
+    .precios__content{
+        padding: 0 2rem;
+    }
+    
+    .precio__actual{
+        font-size: 50px;
+    }
+    
+    .precio__anterior{
+        line-height: 65px;
+        font-size: 15px;
+    }
+    
+    .icon{
+        width: 35px;
+        height: 35px;
+        padding-right: 5px;
+        font-weight: 700;
+    }
+    .btn__compra{
+        width: 85%;
+        height: 50px;
+        font-size: 20px;
+        padding-bottom: 15px;
+    }
+
+}
+
+@media (min-width:1220px) {
+    .text__container{
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        width: 450px;
+        height: 500px;
+
+    }
+    .card__texts{
+        padding: 2.5rem;
+        padding-bottom: 5px;
+    }
+    .card__img{
+        border-top-left-radius: 25px;
+        height: 500px;
+    }
+
+    .card__product{
+        font-size: 20px;
+      
+    }
+    .Card__name_product{
+        font-size: 3.1rem;
+    }
+    .card__description{
+        font-size: 1.rem;
+        line-height: 2rem;
+    }
+    .precio__actual{
+        font-size: 40px;
+    }
+    
+    .precio__anterior{
+        line-height: 65px;
+        font-size: 15px;
+    }
+    .icon{
+        width: 35px;
+        height: 35px;
+        padding-right: 5px;
+        font-weight: 700;
+    }
+    .btn__compra{
+        width: 50%;
+        height: 10%;
+        font-size: 20px;
+        margin:0 auto;
+        margin-bottom: 5px;
+    }
+}
+@media(min-width:1440px){
+
+    .text__container{
+     
+        width: 450px;
+    }
+    .card__img{
+        height: 570px;
+    }
+
+    .card__product{
+        font-size: 20px;
+      
+    }
+    .Card__name_product{
+        font-size: 3.2rem;
+    }
+    .card__description{
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+  
+    .precio__actual{
+        font-size: 55px;
+    }
+    
+    .precio__anterior{
+        line-height: 65px;
+        font-size: 20px;
+    }
+    
+    .icon{
+        width: 40px;
+        height: 40px;
+        padding-right: 5px;
+        font-weight: 700;
+    }
+    .btn__compra{
+        width: 60%;
+        height: 10%;
+        font-size: 25px;
+        margin:0 auto;
+        margin-bottom: 15px;
+    }
+}  
