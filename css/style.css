@@ -34,7 +34,7 @@
 }
 
 .card__img{
-    background-image: url(./images/image-product-mobile.jpg);
+    background-image: url(../images/image-product-mobile.jpg);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -148,7 +148,7 @@
         padding-bottom: 25px;
     }
     .card__img{
-        background:url(/images/image-product-desktop.jpg);
+        background:url(../images/image-product-desktop.jpg);
         background-size:cover;
         background-repeat: no-repeat;
         background-position: center;
